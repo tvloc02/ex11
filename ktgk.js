@@ -37,3 +37,26 @@ function validateForm() {
         document.getElementById("successMessage").innerText = "Thành công";
     }
 }
+
+// Hàm cập nhật tiến trình
+function updateProgress() {
+    // Tính toán phần trăm hoàn thành dựa trên các trường đã được điền
+    let filledFields = 0;
+    const totalFields = 3; // Tổng số trường cần điền (ví dụ)
+
+    // Kiểm tra xem các trường có được điền hay không
+    if (document.getElementById("email").value !== "") filledFields++;
+    if (document.getElementById("phone").value !== "") filledFields++;
+    if (document.getElementById("address").value !== "") filledFields++;
+
+    // Tính phần trăm hoàn thành
+    const percentage = (filledFields / totalFields) * 100;
+
+    // Cập nhật độ dài của phần xanh
+    document.querySelector(".progress-line-fill").style.width = percentage + "%";
+}
+
+// Sự kiện lắng nghe để gọi hàm updateProgress khi người dùng điền thông tin
+document.getElementById("email").addEventListener("input", updateProgress);
+document.getElementById("phone").addEventListener("input", updateProgress);
+document.getElementById("address").addEventListener("input", updateProgress);
