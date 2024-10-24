@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Back button and progress status -->
+    <div class="header">
+        <div class="back-arrow">
+            <a href="#">←</a>
+            <span class="progress-text">Account verification</span>
+            <span class="progress-status">In progress</span>
+        </div>
+    </div>
+    <!-- Dải ngang và khoảng trắng -->
+    <div class="horizontal-strip"></div>
+    <div class="spacer"></div>
+
+    <!-- Form content -->
+    <div class="form-container">
+        <!-- Progress bar -->
+        <div class="progress-bar">
+            <div class="step active">1</div>
+            <img class="line-image" src="images/Rectangle 4356.png" alt="connection-line" />
+            <div class="step">2</div>
+            <img class="line-image" src="images/Rectangle 4356.png" alt="connection-line" />
+            <div class="step">3</div>
+            <img class="line-image" src="images/Rectangle 4356.png" alt="connection-line" />
+            <div class="step">4</div>
+        </div>
+
+        <!-- Form header and fields -->
+        <div class="form-header">
+            <h2>Business Structure</h2>
+            <p>DigiRoad collects this information to better <br> understand and serve your business.</p>
+        </div>
+        <form id="businessForm">
+            <div class="form-group">
+                <div>
+                    <label for="email">Business Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
+                    <span class="error" id="emailError"></span>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone">
+                    <span class="error" id="phoneError"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div style="width: 100%;">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Address line">
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="text" id="city" name="city" placeholder="City">
+                </div>
+                <div>
+                    <input type="text" id="zip" name="zip" placeholder="Zip">
+                </div>
+            </div>
+            <button type="button" class="btn" onclick="validateForm()">Continue →</button>
+            <p id="successMessage" class="success"></p>
+        </form>
+    </div>
+
+    <script src="ktgk.js"></script>
+</body>
+
+</html>
